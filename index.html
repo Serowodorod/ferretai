@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FERRET AI</title>
+  <link rel="stylesheet" type="text/css" href="./css/media.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="knight.png" />
+<link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'> 
+<script src="https://kit.fontawesome.com/1622740860.js" crossorigin="anonymous"></script>
+
+
+  <style>
+    /* Add your custom styles here */
+    .navbar-brand img {
+      max-height: 50px;
+    }
+
+
+   #scrolltop {
+    height: 39px;
+    width: 50px;
+    background-color: #ffb039bd;
+    border-radius: 30px 30px;
+    position: fixed;
+    font-family: "Barriecito";
+    font-size: 25px;
+    text-align: center;
+}
+ 
+
+  html{
+    scroll-behavior: smooth;
+
+}
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+ ul li:hower{
+height: 50px;
+width: 50px;
+webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+    display:inline-block;
+   }
+
+li a img{
+
+
+  height: 50px;
+  width: 50px;
+}
+
+h2{
+
+  font-size: 70px;
+  color: #552981;
+}
+p {
+
+  font-size: 30px;
+}
+
+.bg-dark {
+     background-color: #0c0c0c!important; 
+}
+
+   body {
+  background-color: #2c7c9e;
+  background-image: radial-gradient(at center center, #16031a 35%, #0c0c0c 57%);
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Orbitron";
+  
+}
+
+svg {
+  font-family: 'Russo One', sans-serif;
+   
+  width: 100%; height: 100%;
+}
+svg text {
+  text-transform: uppercase;
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #365fa0;
+  font-size: 140px;
+}
+@keyframes stroke {
+  0%   {
+    fill: rgba(72,138,20,0); stroke: rgb(148 54 160 / 44%);
+    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+  }
+  70%  {fill: rgba(72,138,20,0); stroke: rgb(160 136 54 / 72%); }
+  80%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+  100% {
+        fill: rgb(163 72 204);
+    stroke: rgb(242 255 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+ 
+
+    p{
+  background: linear-gradient(90deg,  yellow, #b35fe2, orange, #7aa1c9, white );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textflow 5s linear infinite;
+}
+@keyframes textflow {
+  from {background-position: 0% center}         
+  to {background-position: 200% center}
+} 
+
+    .app {
+
+
+  display: flex;
+
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+  
+  
+  
+
+
+.tag-list {
+  width: 20rem;
+  max-width: 90vw;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 1rem 0;
+  position: relative;
+  padding: 1.5rem 0;
+  overflow: hidden;
+
+
+}
+
+.loop-slider {
+  .inner {
+    display: flex;
+    width: fit-content;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: var(--direction);
+    animation-duration: var(--duration);
+  }
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0 0.2rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  background-color: #c364f3;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem;
+  margin-right: 1rem; // Must used margin-right instead of gap for the loop to be smooth
+  box-shadow: 
+    0 0.1rem 0.2rem rgb(0 0 0 / 20%),
+    0 0.1rem 0.5rem rgb(0 0 0 / 30%),
+    0 0.2rem 1.5rem rgb(0 0 0 / 40%);
+  
+  span {
+    font-size: 1.2rem;
+    color: #64748b;
+  }
+}
+
+.fade {
+  pointer-events: none;
+  background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+    
+
+       #right {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes zoomInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+  transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+  opacity: 1;
+  -webkit-transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+  transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+  }
+  @keyframes zoomInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+  transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+  opacity: 1;
+  -webkit-transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+  transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+  } 
+
+
+#knight{
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+
+       
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+.hvr-bounce-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #552981;
+  border-radius: 30px 30px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {
+  color: white;
+}
+.hvr-bounce-to-left:hover:before, .hvr-bounce-to-left:focus:before, .hvr-bounce-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 2.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+.apple {
+ 
+  background: linear-gradient(crimson, gold, yellowgreen, teal, crimson);
+  width: 208px;
+  height: 198px;
+  border-radius: 35% 35% 41% 41% / 42% 42% 75% 75%;
+  animation: background 2s infinite alternate;
+}
+@keyframes background {
+  100% {
+    background-position: 0 200px;
+  }
+}
+.apple:before {
+  background: linear-gradient(crimson, gold, yellowgreen, teal, crimson);
+  content: "";
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  margin: -51px 0 0 100px;
+  border-radius: 100px 0;
+  z-index: 5;
+}
+@keyframes background {
+  100% {
+    background-position: 0 200px;
+  }
+}
+
+.apple:after {
+  background: #120515;
+  content: "";
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  margin: 28px 0 0 174px;
+  border-radius: 50%;
+  transform: rotate -53deg;
+  z-index: 4;
+  box-shadow: -127px -109.5px 0 #120515, -118px -107px 0 #120515, -115.5px -102.5px 0 #120515, -105.5px -109.5px 0 #120515, -105px -109.5px 0 #0c0c0c, -129px 166px 0 #120515, -107.5px 166px 0 #120515, -119px 161px 0 #120515;
+}
+
+img[scalable]
+{
+  cursor: pointer;
+  transition-property: max-width, max-height, left, top;
+  transition-duration: 0.3s;
+}
+
+.audio-player {
+    width: 400px;
+    margin: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 10px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+}
+
+#current-time, #total-time {
+    margin-top: 10px;
+}
+
+.hvr-pulse {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+
+
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+   
+  </style>
+  
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img id="knight" src="knight.png" style="border-radius: 25px;" alt="Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#ABOUT">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#HOW">HOW TO BUY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="back" href="#TOk">TOKENOMICS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#ROAD">ROADMAP</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#CON">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-success"><a class="nav-link" href="#">BUY!</a></button>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+ 
+<svg viewBox="0 0 1320 300">
+  <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+    FERRET AI
+  </text>
+</svg>  
+
+
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 ">
+      
+ <h2  style="color:white;  font-size: 45px; ">
+            <font color="#252A34">F</font>
+            <font color="#753422">E</font>
+            <font color="#FFD523">R</font>
+            <font color="#FFD523">R</font>
+            <font color="#FFD523">E</font>
+            <font color="#FFD523">T</font>
+          </h2>
+      <p style="color: white; font-size:px;">Discover the world of FERRET AI made by Apple
+</p>
+
+ <div class="audio-player">
+        <audio style="display:none;" id="audio" controls>
+            <source src="Kanye_West_Stronger.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="controls">
+          <div class="hvr-grow">
+           <button type="button"  style="background-color: purple; height:60px; width:80px" class="btn btn-success" id="play-pause-button">Play</button>
+           </div>
+            
+            
+        </div>
+        
+        
+    </div>
+
+    
+    </div>
+    <div class="col-md-6 section section1 ">
+    
+
+   <img id="right" src="1.png" style="height: 350px; width: 310px;">
+
+    </div>
+
+    
+    
+  </div>
+
+
+   <div class="row mt-5">
+    <div class="col-md-6 ">
+
+
+      <ul>
+        <li><a class="hvr-grow"  href="https://twitter.com/Ferret_AiOnSol"><img src="./nw/1.png"></a> </li>
+        <li><a class="hvr-grow" href="https://t.me/FerretAiOnSolana"><img src="./nw/2.png"></a></li>
+        <li><a class="hvr-grow" href=""><img src="./nw/3.png"></a></li>
+      </ul>
+      
+ 
+ 
+
+    
+    
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row mt-5">
+    
+     
+
+     <div class="col-md-6 section section3">
+     <div class="container" style="margin-top: 50px; margin-bottom: 70px;">
+  <div class="apple"></div>
+
+</div>
+        <div class="app">
+  
+  <div class="tag-list">
+    <div class="loop-slider" style="--duration:15951ms; --direction:normal;">
+      
+    <div class="loop-slider" style="--duration:19260ms; --direction:reverse;">
+      <div class="inner">
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <!-- duplicated content -->
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+        <div class="tag"><span></span> BUY!</div>
+      </div>
+    </div>
+    <div class="loop-slider" style="--duration:10449ms; --direction:normal;">
+      <div class="inner">
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <!-- duplicated content -->
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+        <div class="tag"><span></span> FERRET </div>
+      </div>
+    </div>
+    
+    <div class="loop-slider" style="--duration:15936ms; --direction:normal;">
+      
+    </div>
+    <div class="fade"></div>
+  </div>
+</div>
+</div>
+    </div>
+  
+    
+    <div class="col-md-6 section section3">
+           
+ <h2 id="ABOUT" style="color:white;  font-size: 45px; ">
+            <font color="#252A34">A</font>
+            <font color="#753422">B</font>
+            <font color="#FFD523">O</font>
+            <font color="#FFD523">U</font>
+            <font color="#FFD523">T</font> </h2>
+      <p style="color: white; ">Apple researchers quietly revealed their new AI model ‘Ferret’, the Chat GPT & Grok killer!</p>
+    
+    
+    </div>
+    </div>
+  
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"><div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="video.mp4" allowfullscreen></iframe>
+</div>  </div>
+   <div class="col-md-6">
+  <img src="table.png" data-toggle="modal" data-target=".bd-example-modal-lg" class="img-fluid" scalable="150px"  > </div>
+
+  </div>
+</div>
+
+<div class="modal  bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <img class="img-fluid" src="table.png">
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-5">
+
+
+  
+    
+    <div class="col-md-6 section section3">
+       <h2 id="HOW">HOW TO </h2>
+
+    
+    </div>
+
+    <div class="col-md-6 section section3">
+      <div class="bg">
+  <h2 style="text-align: center; color: white;">
+            <font color="#753422">B</font>
+            <font color="#FFD523">U</font>
+            <font color="#71EFA3">Y</font>
+           <font color="#0F52BA">!</font></h2>
+</div>
+
+    
+    </div>
+  </div>
+</div>
+
+
+ <div id="scrolltop">
+   
+   <a href="#back">^</a>
+ </div>
+ 
+
+
+<div class="container">
+  <div class="row mt-5">
+
+
+  
+    
+    <div class="col-md-12 section section3">
+       <div class="hvr-bounce-to-left" style="text-align: center;  ">
+<p>
+Download Phantom or your wallet of choice from the app store or google play store for free. Desktop users, download the google chrome extension by going to Phantom.app.</p>
+</div>
+
+    <div class="col-md-12 section section3">
+       <div class="hvr-bounce-to-left" style="text-align: center;  ">
+<p>
+Have SOL in your wallet to switch to $FERRET AI. If you don’t have any SOL, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+</div>
+
+    <div class="col-md-12 section section3">
+       <div  class="hvr-bounce-to-left"style="text-align: center;  ">
+<p>
+Connect to Raydium. Go to raydium.io in google chrome or on the browser inside your Phantom app. Connect your wallet. Paste the $FERRET AI token address into Raydium, select $FERRET AI, and confirm. When Phantom prompts you for a wallet signature, sign.</p>
+</div>
+
+    <div class="col-md-12 section section3">
+       <div  class="hvr-bounce-to-left" style="text-align: center;   ">
+<p>
+Switch SOL for $FERRET AI. We have low taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.</p>
+</div>
+
+
+    
+    </div>
+
+ 
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-12 section section3"  >
+      <div style="text-align:center;" > <h2 id="TOk">TOKEN OMICS </h2> </div>
+       
+
+    
+    </div>
+
+  
+  </div>
+  <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-6 section section3"  >
+      <div style="text-align:center; border: 8px solid #131313;
+  border-radius: 30px; background-color: #131313;" > <p>LP: 100% BURNED</p>
+
+<p>Supply: 1 Billion</p>
+
+<p>Tax: 0/0%</p>
+
+<p>Mint option is revoked, 100% of LP is Burnt. </p>
+
+<p>TAX
+0% Buy / 0% Sell</p> </div>
+       
+
+    
+    </div>
+
+    <div  class="col-md-6 section section3"  >
+      <img id="knight"   style="width: 310px;" src="racoon.png">
+       
+
+    
+    </div>
+
+  
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-12 section section3"  >
+      <div style="text-align:center;" > <h2 id="ROAD">ROADMAP</h2> </div>
+       
+
+    
+    </div>
+
+  
+  </div>
+
+   <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-4 section section3"  >
+       <img  style=" width:310px;" src="racoon2.png"> 
+
+     </div>
+
+    <div  class="col-md-4 section section3"  >
+      <div style="text-align:center; border: 8px solid 131313;
+  border-radius: 30px;background-color: #131313;" > <p>Phase 1: FERRET AI</p>
+
+<p>Phase 2: Vibe and HODL</p>
+
+<p>Phase 3: FERRET AI Takeover</p> 
+</div>
+ </div>
+       
+    <div  class="col-md-4 section section3"  >
+       <img style=" width:310px;" src="racoon1.png"> 
+       
+       
+
+    </div>
+
+  
+  </div>
+
+
+  <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-4 section section3"  >
+      <div style="text-align:center; border: 8px solid 131313;
+  border-radius: 30px;background-color: #131313; " > <p>Phase 1
+Launch
+- Activate Marketing Strategy
+
+- Build Strong Community
+
+- Update Dexscreener Socials
+
+- Update DexTools Socials
+
+- Purchase #1 Trending Spot
+
+- On Board First Round of KOLs
+
+- Raid Twitter + Telegram<p> 
+       
+
+    
+    </div>
+
+</div>
+
+
+
+
+
+        <div  class="col-md-4 section section3"  >
+      <div style="text-align:center; border: 8px solid 131313;
+  border-radius: 30px;background-color: #131313;" > <p>Phase 2
+- Release TG Bot Utility
+
+- Grow Partnerships
+
+- Fast Track CMC Listing
+
+- Fast Track CG Listing
+
+- Fast Track MoonTok Listing
+
+- On Board Second Round of KOLs
+
+- Sneak Peak 2nd Utility<p> 
+       
+
+    
+    </div>
+
+  </div>
+      <div  class="col-md-4 section section3"  >
+      <div style="text-align:center; border: 8px solid 131313;
+  border-radius: 30px;background-color: #131313;" > <p>Phase 3
+- Massive Marketing Push
+
+- Push TikTok + Reddit Ads
+
+- Develop E-Commerce Business
+
+- Introduce Rev Share Model
+
+- On Board TikTok Influencers
+
+- Release 2nd Utility
+
+- Plan Next 3 Roadmap Phases<p> 
+       
+
+    
+    </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+
+<div class="container">
+  <div class="row mt-5">
+
+
+  
+    
+    <div  class="col-md-12 section section3"  >
+      <div style="text-align:center;" > <h2 id="CON"> CONTACT</h2> </div>
+       
+    
+    </div>
+
+  
+  </div>
+</div>
+
+
+
+
+<footer class="footer mt-5">
+  <div class="container text-center">
+    <ul class="list-inline">
+      <li class="list-inline-item" style="color: white;"><a class="hvr-grow" href="https://twitter.com/Ferret_AiOnSol"><img src="./nw/1.png">  </a></li>
+      <li class="list-inline-item" style="color: white;"><a class="hvr-grow " href="https://t.me/FerretAiOnSolana"><img src="./nw/2.png">   </a></li>
+      <li class="list-inline-item" style="color: white;"><a class="hvr-grow" href=""><img src="./nw/3.png">   </a></li>
+      <li class="list-inline-item" style="color: white;"><a class="hvr-grow" href=""><img src="./nw/4.png">   </a></li>
+      <li class="list-inline-item" style="color: white;"><a class="hvr-grow" href="#back"><img src="./nw/5.png">   </a></li>
+  
+   
+   <a id="scrolltop" href="#back">^</a>
+
+    </ul>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript"> 
+
+const audio = document.getElementById("audio");
+const playPauseButton = document.getElementById("play-pause-button");
+const volumeControl = document.getElementById("volume-control");
+const progressBar = document.getElementById("progress-bar");
+const currentTimeDisplay = document.getElementById("current-time");
+const totalTimeDisplay = document.getElementById("total-time");
+
+let isPlaying = false;
+
+playPauseButton.addEventListener("click", () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseButton.textContent = "Play";
+    } else {
+        audio.play();
+        playPauseButton.textContent = "Pause";
+    }
+    isPlaying = !isPlaying;
+});
+
+volumeControl.addEventListener("input", () => {
+    audio.volume = volumeControl.value;
+});
+
+audio.addEventListener("timeupdate", () => {
+    const currentTime = audio.currentTime;
+    const duration = audio.duration;
+
+    const currentMinutes = Math.floor(currentTime / 60);
+    const currentSeconds = Math.floor(currentTime % 60);
+    const totalMinutes = Math.floor(duration / 60);
+    const totalSeconds = Math.floor(duration % 60);
+
+    currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+    totalTimeDisplay.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`;
+
+    const progress = (currentTime / duration) * 100;
+    progressBar.style.width = `${progress}%`;
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+</html>
